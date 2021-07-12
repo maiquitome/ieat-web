@@ -1,0 +1,22 @@
+# PostgreSQL. Versions 9.3 and up are supported.
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  host: localhost
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: ieat_development
+
+test:
+  <<: *default
+  database: ieat_test
+
+production:
+  <<: *default
+  database: ieat_production
+  username: ieat
+  password: <%= ENV['IEAT_DATABASE_PASSWORD'] %>
