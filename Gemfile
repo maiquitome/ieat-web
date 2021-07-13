@@ -15,6 +15,7 @@ gem 'webpacker', '~> 5.0'
 
 group :development, :test do
   gem 'pry', '~> 0.14.1'
+  gem 'rspec-rails', '~> 5.0', '>= 5.0.1'
 end
 
 group :development do
